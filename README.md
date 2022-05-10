@@ -43,4 +43,4 @@ This query fetches aggregated data from all loans created on the platform.
 
 | Subgraph     | Query URL  |
 |---------------------|--------------------------------------------------------------------|
-| Master Subgraph     | https://api.thegraph.com/subgraphs/name/shreyas3336/lend |
+| Lend Subgraph     | https://api.thegraph.com/subgraphs/name/shreyas3336/lend |
