@@ -8,7 +8,7 @@ This query fetches aggregated data from all loans created on the platform.
 
 ```graphql
 {
-    loanEntities {
+    loans {
         id
         loanID
         wvtAddress
