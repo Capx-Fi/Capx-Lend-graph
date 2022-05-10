@@ -1,0 +1,33 @@
+type NFT @entity {
+  id: ID!
+  tokenId : BigInt!
+  owner: Bytes! # address
+}
+
+type Loan @entity {
+  id: ID!
+  loanID: BigInt! # uint256
+  wvtAddress: Bytes!
+  wvtDecimal: BigInt!
+  wvtAmount: BigInt!
+  wvtTicker: String!
+  stableCoinAddress: Bytes!
+  stableCoinDecimal: BigInt!
+  stableCoinAmount: BigInt!
+  stableCoinTicker: String!
+  loanToValue: BigInt!
+  discount: BigInt!
+  liquidationThreshold: BigInt!
+  endTime: BigInt!
+  initiationTime: BigInt!
+  externalLiquidation: Boolean!
+  stageOfLoan: BigInt!
+  borrowerAddress: Bytes!
+  lenderAddress: Bytes!
+  interestRate: BigInt!
+  description : String!
+  liquidationIntoContractAmt : BigInt!
+  liquidationFromContractToLenderAmt : BigInt!
+  liquidator : Bytes!
+  completedAtTime : BigInt!
+}

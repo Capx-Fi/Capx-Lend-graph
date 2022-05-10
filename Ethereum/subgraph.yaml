@@ -1,0 +1,97 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Lend
+    network: rinkeby
+    source:
+      address: "0x309D0Ff4b655bAD183A3FA88A0547b41e877DcF1"
+      abi: Lend
+      startBlock: 10565700
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AcceptLoan
+        - AdminChanged
+        - BeaconUpgraded
+        - CancelLoan
+        - CreateLoan
+        - LiquidateLoan
+        - OwnershipTransferred
+        - Paused
+        - PullAsset
+        - RepayLoan
+        - Unpaused
+        - Upgraded
+      abis:
+        - name: Lend
+          file: ./abis/Lend.json
+        - name: ERC20Token
+          file: ./abis/ERC20Token.json
+      eventHandlers:
+        - event: AcceptLoan(uint256,bool,uint256,uint256,uint256)
+          handler: handleAcceptLoan
+        - event: AdminChanged(address,address)
+          handler: handleAdminChanged
+        - event: BeaconUpgraded(indexed address)
+          handler: handleBeaconUpgraded
+        - event: CancelLoan(uint256)
+          handler: handleCancelLoan
+        - event: CreateLoan(uint256,address,address,bool,uint256,uint96,uint96,uint96,uint256,uint96,bool)
+          handler: handleCreateLoan
+        - event: LiquidateLoan(uint256,uint256,uint256)
+          handler: handleLiquidateLoan
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Paused(address)
+          handler: handlePaused
+        - event: PullAsset(uint256,uint256)
+          handler: handlePullAsset
+        - event: RepayLoan(uint256)
+          handler: handleRepayLoan
+        - event: Unpaused(address)
+          handler: handleUnpaused
+        - event: Upgraded(indexed address)
+          handler: handleUpgraded
+      file: ./src/mapping.ts
+  - kind: ethereum
+    name: LendNFT
+    network: rinkeby
+    source:
+      address: "0x3d68F2e795d8DaE5a969906fBe8d9df0498Ffa0f"
+      abi: LendNFT
+      startBlock: 10582290
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AdminChanged
+        - Approval
+        - ApprovalForAll
+        - BeaconUpgraded
+        - OwnershipTransferred
+        - Transfer
+        - Upgraded
+      abis:
+        - name: LendNFT
+          file: ./abis/LendNFT.json
+      eventHandlers:
+        - event: AdminChanged(address,address)
+          handler: handleAdminChanged
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: BeaconUpgraded(indexed address)
+          handler: handleBeaconUpgraded
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: Upgraded(indexed address)
+          handler: handleUpgraded
+      file: ./src/nft.ts
