@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: Lend
-    network: mumbai
+    network: fuji
     source:
-      address: "0x1CCAC1f76283B97EcF263255B826ED12604c2461"
+      address: "0x564Aff2424489E08f5224Cdf24307abA2Ec35653"
       abi: Lend
-      startBlock: 26268676
+      startBlock: 9483549
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -59,11 +59,11 @@ dataSources:
       file: ./src/mapping.ts
   - kind: ethereum
     name: LendNFT
-    network: mumbai
+    network: fuji
     source:
-      address: "0xC13D8CF625EfFdbe762981fD3a3B9c2965747109"
+      address: "0x18dA3f27Bc13a882455133C0090D1956175317BF"
       abi: LendNFT
-      startBlock: 26268558
+      startBlock: 9483356
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -95,3 +95,4 @@ dataSources:
         - event: Upgraded(indexed address)
           handler: handleUpgraded
       file: ./src/nft.ts
+
