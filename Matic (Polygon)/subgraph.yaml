@@ -29,6 +29,8 @@ dataSources:
       abis:
         - name: Lend
           file: ./abis/Lend.json
+        - name: ERC20Token
+          file: ./abis/ERC20Token.json
       eventHandlers:
         - event: AcceptLoan(uint256,bool,uint256,uint256,uint256)
           handler: handleAcceptLoan
