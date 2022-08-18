@@ -4,7 +4,7 @@
 ## Example Query
 #### Querying Loan Information of Capx Lend subgraph
 
-This query fetches aggregated data from all loans created on the platform. 
+This query fetches aggregated data from all loans created on the decentralized ledger. 
 
 ```graphql
 {
